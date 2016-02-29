@@ -1,0 +1,33 @@
+.container
+  .col-sm-12
+    %h1 Welcome to 20spokes Code Challenge!
+
+    %p The challenge is to create a contact form using React to post to the Rails server and save the contact information.
+
+    %h3 Getting Started
+
+    %ul
+      %li Go to app/assets/javascripts/components/contact.js.jsx which has been setup to include the form. It is being rendered in app/views/contact/index.html.haml.
+      %li Create form in contact.js.jsx with a post to the contact controller in Rails
+      %li Create a model called Contact with the following attributes: first name, last name, email, and message.
+
+    %h3 Notes
+    %ul
+      %li Bootstrap has been included to assist with design.
+      %li Extra Credit for validating form inputs which are all required.
+
+    %h3 Resources
+
+    %ul
+      %li 
+        React Documentation:
+        %a{ href: "https://facebook.github.io/react/docs/getting-started.html"} https://facebook.github.io/react/docs/getting-started.html
+      %li 
+        React Tutorial (Excellent in explaining components)
+        %a{ href: "https://facebook.github.io/react/docs/tutorial.html"} https://facebook.github.io/react/docs/tutorial.html
+      %li 
+        Documentation on Forms: 
+        %a{href:"https://facebook.github.io/react/docs/forms.html"}https://facebook.github.io/react/docs/forms.html
+      %li 
+        React Rails is used to load React:
+        %a{ href: "https://github.com/reactjs/react-rails" } https://github.com/reactjs/react-rails
