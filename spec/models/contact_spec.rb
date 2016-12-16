@@ -10,7 +10,6 @@ RSpec.describe Contact, type: :model do
     end
 
     it "has a readable last name" do
-      contact.last_name = "nick"
       expect(contact.last_name).to eq "Warshaw"
     end
 
