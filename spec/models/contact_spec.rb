@@ -45,7 +45,7 @@ RSpec.describe Contact, type: :model do
       expect(contact.message).to eq "To die will be an awfully big adventure."
     end
   end
-  
+
   describe "validations" do
       it "is not valid without a first name" do
         contact = Contact.new(last_name: "Warshaw", email: "jonathan.warshaw@gmail.com", message: "and now for something completely different...")
@@ -60,6 +60,14 @@ RSpec.describe Contact, type: :model do
       it "is not valid without an email" do
         contact = Contact.new(first_name: "Jonathan", last_name: "Warshaw", message: "and now for something completely different...")
         expect(contact.valid?).to eq false
+      end
+
+      it "has a unique email" do
+        original_email = Contact.create(first_name: "Jonathan", last_name: "Warshaw", email: "jonathan.warshaw@gmail.com", message: "and now for something completely different...")
+
+        duplicate_email = Contact.new(first_name: "Frannie", last_name: "Johnson", email: "jonathan.warshaw@gmail.com", message: "Howdy") 
+
+        expect(duplicate_email.valid?).to eq false
       end
 
       it "is not valid without a message" do
