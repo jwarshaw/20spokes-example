@@ -7,3 +7,4 @@ Contact.delete_all
   								 :last_name		=> Faker::Name.last_name,
   								 :email     	=> Faker::Internet.email,
                 	 :message   	=> Faker::Lorem.sentence )
+end
