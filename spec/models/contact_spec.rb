@@ -45,4 +45,31 @@ RSpec.describe Contact, type: :model do
       expect(contact.message).to eq "To die will be an awfully big adventure."
     end
   end
+  
+  describe "validations" do
+      it "is not valid without a first name" do
+        contact = Contact.new(last_name: "Warshaw", email: "jonathan.warshaw@gmail.com", message: "and now for something completely different...")
+        expect(contact.valid?).to eq false
+      end
+
+      it "is not valid without a last name" do
+        contact = Contact.new(first_name: "Jonathan", email: "jonathan.warshaw@gmail.com", message: "and now for something completely different...")
+        expect(contact.valid?).to eq false
+      end
+
+      it "is not valid without an email" do
+        contact = Contact.new(first_name: "Jonathan", last_name: "Warshaw", message: "and now for something completely different...")
+        expect(contact.valid?).to eq false
+      end
+
+      it "is not valid without a message" do
+        contact = Contact.new(first_name: "Jonathan", last_name: "Warshaw", email: "jonathan.warshaw@gmail.com")
+        expect(contact.valid?).to eq false
+      end
+
+      it "is valid with all fields entered" do
+        contact = Contact.new(first_name: "Jonathan", last_name: "Warshaw", email: "jonathan.warshaw@gmail.com", message: "and now for something completely different...")
+        expect(contact.valid?).to eq true
+      end
+    end
 end
