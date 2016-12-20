@@ -5,7 +5,23 @@ var ContactForm = React.createClass({
     return {firstName: '', lastName: '', email: '', message: ''};
   },
 
-  handleSubmit: function(event){
+  handleFirstNameChange: function(event) {
+    this.setState({firstName: event.target.value});
+  },
+
+  handleLastNameChange: function(event) {
+    this.setState({lastName: event.target.value});
+  },
+
+  handleEmailChange: function(event) {
+    this.setState({email: event.target.value});
+  },
+
+  handleMessageChange: function(event) {
+    this.setState({message: event.target.value});
+  },
+
+  handleSubmit: function(event) {
     event.preventDefault();
     console.warn('submit has been triggered');
 
@@ -13,26 +29,26 @@ var ContactForm = React.createClass({
 
   },
 
-  render: function(){
+  render: function() {
     return (
       <div className="container">
         <div className="col-sm-12">
           <form onSubmit={this.handleSubmit}>
           <label>
             First name:
-              <input type="text" name="first-name" />
+              <input type="text" value={this.state.value} onChange={this.handleChange} />
             </label>
             <label>
               Last name:
-              <input type="text" name="last-name" />
+              <input type="text" value={this.state.value} onChange={this.handleChange} />
             </label>
             <label>
               email:
-              <input type="email" name="email" />
+              <input type="email" value={this.state.value} onChange={this.handleChange} />
             </label>
             <label>
               Message:
-              <textarea value={this.state.message} onChange={this.handleChange} />
+              <textarea value={this.state.message} onChange={this.handleMessageChange} />
             </label>
             <div className="actions">
               <button className="btn btn-primary">Submit</button>
