@@ -36,15 +36,15 @@ var ContactForm = React.createClass({
           <form onSubmit={this.handleSubmit}>
           <label>
             First name:
-              <input type="text" value={this.state.firstName} onChange={this.handleChange} />
+              <input type="text" value={this.state.firstName} onChange={this.handleFirstNameChange} />
             </label>
             <label>
               Last name:
-              <input type="text" value={this.state.lastName} onChange={this.handleChange} />
+              <input type="text" value={this.state.lastName} onChange={this.handleLastNameChange} />
             </label>
             <label>
               email:
-              <input type="email" value={this.state.email} onChange={this.handleChange} />
+              <input type="email" value={this.state.email} onChange={this.handleEmailChange} />
             </label>
             <label>
               Message:
