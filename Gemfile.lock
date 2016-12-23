@@ -192,7 +192,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
-  byebug
+  byebug (~> 8.2.2)
   faker
   haml-rails (~> 0.9)
   jbuilder (~> 2.0)
