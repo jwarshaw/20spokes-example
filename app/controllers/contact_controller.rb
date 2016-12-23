@@ -3,8 +3,23 @@ class ContactController < ApplicationController
   end
 
   def create
-    # Create and save model here
-  end
+    @contact = Contact.new(contact_params)
+
+    if @contact.save
+      render :json =>
+      {
+       :status => 'ok',
+       :result => 'Thanks! We will get back to you ASAP.',
+       :object => @contact
+      }.to_json
+    else
+      render :json =>
+      {
+       :status => 'error',
+       :result => @contact.errors.full_messages.to_sentence,
+       :object => @contact
+      }.to_json
+    end  end
 
   private
 
